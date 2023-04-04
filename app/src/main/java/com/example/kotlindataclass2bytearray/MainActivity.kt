@@ -12,6 +12,7 @@ data class Ga(var k1: Long, var k2: Double) {
     fun toByteArray(): ByteArray? {
         val size: Int = 8 + 8
         val byteBuffer = ByteBuffer.allocate(size)
+            .order(ByteOrder.BIG_ENDIAN)
             .putLong(k1)
             .putDouble(k2)
         byteArray=byteBuffer.array()
