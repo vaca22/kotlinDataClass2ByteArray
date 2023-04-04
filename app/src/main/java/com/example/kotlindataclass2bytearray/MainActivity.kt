@@ -20,7 +20,7 @@ data class Ga(var k1: Long, var k2: Double) {
     }
 
     fun getBack() {
-        val byteBuffer = ByteBuffer.wrap(byteArray)
+        val byteBuffer = ByteBuffer.wrap(byteArray).order(ByteOrder.BIG_ENDIAN)
         n1 = byteBuffer.getLong()
         n2 = byteBuffer.getDouble()
     }
